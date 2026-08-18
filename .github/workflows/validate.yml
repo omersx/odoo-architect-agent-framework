@@ -1,0 +1,64 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  static:
+    name: Static framework validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run production validator
+        run: python tools/validate_framework.py
+
+      - name: Run CLI unit tests
+        env:
+          PYTHONPATH: src
+          PYTHONDONTWRITEBYTECODE: "1"
+        run: python -B -m unittest discover -s tests/unit -p "test_*.py"
+
+  odoo-smoke:
+    name: Manual Odoo install smoke test
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
+    strategy:
+      fail-fast: false
+      matrix:
+        odoo-version: ["18.0", "19.0"]
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Pull Odoo image
+        run: docker pull odoo:${{ matrix.odoo-version }}
+
+      - name: Run Odoo install test
+        env:
+          ODOO_VERSION: ${{ matrix.odoo-version }}
+        run: |
+          docker compose -f compose.odoo.yml up -d db
+          docker compose -f compose.odoo.yml run --rm odoo odoo \
+            -d odoo_architect_test_${{ matrix.odoo-version }} \
+            -i biz_bridge_pro \
+            --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons \
+            --test-enable \
+            --stop-after-init \
+            --without-demo=all \
+            --log-level=test
+          docker compose -f compose.odoo.yml run --rm odoo odoo \
+            -d odoo_architect_test_${{ matrix.odoo-version }} \
+            -u biz_bridge_pro \
+            --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons \
+            --test-enable \
+            --stop-after-init \
+            --log-level=test
