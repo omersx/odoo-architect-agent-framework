@@ -42,7 +42,7 @@ Requirements:
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/odoo-architect-agent-framework.git
+git clone https://github.com/omersx/odoo-architect-agent-framework.git
 cd odoo-architect-agent-framework
 ```
 

@@ -12,11 +12,9 @@ This guide shows how to install and use the Odoo Architect Agent Framework after
 ## 1. Clone
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/odoo-architect-agent-framework.git
+git clone https://github.com/omersx/odoo-architect-agent-framework.git
 cd odoo-architect-agent-framework
 ```
-
-Replace `YOUR_USERNAME` with the GitHub owner or organization after the repository is published.
 
 ## 2. Install the CLI
 
