@@ -27,6 +27,12 @@ Odoo Architect helps agents and developers:
 - Validate framework structure, manifests, XML, Python files, access CSVs, skill files, and CLI packaging.
 - Run live Odoo install/update smoke tests through Docker Compose.
 
+## How It Works
+
+<p align="center">
+  <img src="assets/odoo-architect-workflow.svg" alt="Odoo Architect Agent Framework workflow: user goal, agent adapter, architecture rules, CLI actions, custom addon, quality gates, Odoo runtime, and GitHub community release" width="960">
+</p>
+
 ## Project Status
 
 Current status: **release candidate**.

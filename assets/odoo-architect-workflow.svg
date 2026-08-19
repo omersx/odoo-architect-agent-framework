@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Odoo Architect Agent Framework workflow</title>
+  <desc id="desc">A workflow diagram showing how a business requirement moves through agent adapters, Odoo architecture rules, CLI actions, custom addons, static validation, live Odoo smoke tests, and GitHub community release.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#06091c"/>
+      <stop offset="0.54" stop-color="#0a1234"/>
+      <stop offset="1" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ec2cff"/>
+      <stop offset="0.5" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f43fef"/>
+      <stop offset="1" stop-color="#6d28d9"/>
+    </linearGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.2 0 0 0 0 0.35 0 0 0 0 1 0 0 0 0.7 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#60a5fa"/>
+    </marker>
+    <style>
+      .label { fill: #f8fafc; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 25px; font-weight: 700; }
+      .small { fill: #cbd5e1; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 15px; font-weight: 500; }
+      .tiny { fill: #94a3b8; font-family: Inter, Segoe UI, Arial, sans-serif; font-size: 13px; font-weight: 500; }
+      .node { fill: rgba(15, 23, 42, 0.78); stroke: rgba(148, 163, 184, 0.42); stroke-width: 1.2; }
+      .rule { fill: rgba(30, 41, 59, 0.85); stroke: rgba(96, 165, 250, 0.42); stroke-width: 1; }
+      .line { stroke: #60a5fa; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1200" height="675" rx="30" fill="url(#bg)"/>
+  <path d="M44 560 C205 477 269 622 420 541 C546 474 642 591 795 522 C944 454 1016 516 1160 444" stroke="#1d4ed8" stroke-width="1.2" opacity="0.35" fill="none"/>
+  <path d="M44 136 C168 86 265 168 391 116 C535 56 644 155 762 97 C902 29 1012 99 1160 52" stroke="#7c3aed" stroke-width="1.2" opacity="0.35" fill="none"/>
+  <circle cx="156" cy="132" r="4" fill="#2563eb" opacity="0.8"/>
+  <circle cx="1008" cy="100" r="4" fill="#ec2cff" opacity="0.85"/>
+  <circle cx="986" cy="566" r="4" fill="#06b6d4" opacity="0.85"/>
+
+  <text x="68" y="76" class="label" font-size="33">Odoo Architect Agent Framework Workflow</text>
+  <text x="68" y="106" class="small">From business idea to upgrade-safe Odoo addon, validated and ready for community collaboration.</text>
+
+  <rect x="69" y="160" width="190" height="106" rx="18" class="node"/>
+  <circle cx="112" cy="213" r="27" fill="url(#purple)" filter="url(#softGlow)"/>
+  <path d="M101 209 h22 M101 219 h16 M101 199 h29" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+  <text x="150" y="202" class="label">User Goal</text>
+  <text x="150" y="229" class="small">Business process,</text>
+  <text x="150" y="249" class="small">industry need, or fix</text>
+
+  <rect x="340" y="160" width="220" height="106" rx="18" class="node"/>
+  <circle cx="385" cy="213" r="27" fill="url(#blue)" filter="url(#softGlow)"/>
+  <path d="M374 202 h22 v22 h-22 z M397 207 l12 6 -12 6" fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+  <text x="424" y="202" class="label">Agent Adapter</text>
+  <text x="424" y="229" class="small">Codex, Claude Code,</text>
+  <text x="424" y="249" class="small">Antigravity, OpenCode</text>
+
+  <rect x="647" y="138" width="486" height="151" rx="22" fill="rgba(15, 23, 42, 0.72)" stroke="url(#accent)" stroke-width="1.4"/>
+  <text x="685" y="180" class="label">Odoo Architecture Rules</text>
+  <rect x="686" y="204" width="128" height="36" rx="18" class="rule"/>
+  <text x="704" y="227" class="tiny">Never core edits</text>
+  <rect x="828" y="204" width="120" height="36" rx="18" class="rule"/>
+  <text x="852" y="227" class="tiny">ORM-first</text>
+  <rect x="962" y="204" width="125" height="36" rx="18" class="rule"/>
+  <text x="981" y="227" class="tiny">Security gate</text>
+  <rect x="686" y="249" width="140" height="36" rx="18" class="rule"/>
+  <text x="704" y="272" class="tiny">XML inheritance</text>
+  <rect x="840" y="249" width="128" height="36" rx="18" class="rule"/>
+  <text x="860" y="272" class="tiny">Multi-company</text>
+  <rect x="982" y="249" width="105" height="36" rx="18" class="rule"/>
+  <text x="1008" y="272" class="tiny">Tests</text>
+
+  <path class="line" d="M260 213 H329"/>
+  <path class="line" d="M560 213 H632"/>
+
+  <rect x="69" y="366" width="224" height="128" rx="18" class="node"/>
+  <text x="105" y="408" class="label">CLI Actions</text>
+  <text x="105" y="439" class="small">scaffold, review, validate,</text>
+  <text x="105" y="461" class="small">doctor, smoke-test</text>
+  <path d="M105 386 h63" stroke="url(#accent)" stroke-width="5" stroke-linecap="round"/>
+
+  <rect x="353" y="366" width="224" height="128" rx="18" class="node"/>
+  <text x="389" y="408" class="label">Custom Addon</text>
+  <text x="389" y="439" class="small">Models, views, security,</text>
+  <text x="389" y="461" class="small">data, reports, tests</text>
+  <path d="M389 386 h72" stroke="url(#accent)" stroke-width="5" stroke-linecap="round"/>
+
+  <rect x="637" y="366" width="224" height="128" rx="18" class="node"/>
+  <text x="673" y="408" class="label">Quality Gates</text>
+  <text x="673" y="439" class="small">Static checks, XML parse,</text>
+  <text x="673" y="461" class="small">manifest and access review</text>
+  <path d="M673 386 h74" stroke="url(#accent)" stroke-width="5" stroke-linecap="round"/>
+
+  <rect x="921" y="366" width="212" height="128" rx="18" class="node"/>
+  <text x="957" y="408" class="label">Odoo Runtime</text>
+  <text x="957" y="439" class="small">Docker install/update</text>
+  <text x="957" y="461" class="small">smoke tests on 18/19</text>
+  <path d="M957 386 h78" stroke="url(#accent)" stroke-width="5" stroke-linecap="round"/>
+
+  <path class="line" d="M890 289 C848 330 775 332 749 354"/>
+  <path class="line" d="M749 494 C749 536 690 556 618 556 H305 C229 556 181 530 181 506"/>
+  <path class="line" d="M293 430 H338"/>
+  <path class="line" d="M577 430 H622"/>
+  <path class="line" d="M861 430 H906"/>
+
+  <rect x="394" y="535" width="412" height="76" rx="22" fill="rgba(2, 6, 23, 0.82)" stroke="url(#accent)" stroke-width="1.3"/>
+  <text x="428" y="569" class="label" font-size="23">Publish and Improve</text>
+  <text x="428" y="594" class="small">GitHub README, issues, PRs, docs, and reusable industry modules</text>
+
+  <path class="line" d="M1027 494 C1027 574 906 573 822 573"/>
+  <path class="line" d="M394 573 C252 573 145 500 111 277"/>
+
+  <text x="71" y="636" class="tiny">Production gate: static validation + live Odoo install/update testing + security review + functional acceptance.</text>
+</svg>
