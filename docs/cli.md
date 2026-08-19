@@ -18,6 +18,8 @@ Then run:
 odoo-architect info
 ```
 
+For full installation and first-use examples, see [Install and Use](install-and-use.md).
+
 ## Commands
 
 ### `info`

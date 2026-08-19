@@ -61,6 +61,8 @@ gh repo create odoo-architect-agent-framework \
   --description "Open-source Odoo Architect Agent Framework for production-minded Odoo addon development."
 ```
 
+After pushing, replace `YOUR_USERNAME` in `README.md` and `docs/install-and-use.md` with the real GitHub owner or organization.
+
 ## 5. Repository Settings
 
 After publishing:

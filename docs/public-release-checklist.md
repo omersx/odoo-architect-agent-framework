@@ -5,6 +5,8 @@ Use this before the first GitHub push.
 ## Repository Hygiene
 
 - [ ] README explains the project clearly.
+- [ ] README shows clone, install, and first-use commands.
+- [ ] `docs/install-and-use.md` is up to date.
 - [ ] License is present.
 - [ ] Contributing guide is present.
 - [ ] Security policy is present.

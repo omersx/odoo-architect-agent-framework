@@ -31,6 +31,7 @@ REQUIRED_ROOT_FILES = [
     "compose.odoo.yml",
     "pyproject.toml",
     "docs/cli.md",
+    "docs/install-and-use.md",
     "docs/publishing.md",
     "docs/public-release-checklist.md",
     "docs/vision.md",

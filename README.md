@@ -31,6 +31,44 @@ See:
 - [Validation Report](docs/validation-report.md)
 - [Live Odoo Validation](docs/live-odoo-validation.md)
 
+## Installation
+
+Requirements:
+
+- Python 3.10 or newer.
+- Git.
+- Docker and Docker Compose v2 for live Odoo smoke tests.
+
+Clone the repository:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/odoo-architect-agent-framework.git
+cd odoo-architect-agent-framework
+```
+
+Install the CLI:
+
+```bash
+python -m pip install -e .
+```
+
+Check that it works:
+
+```bash
+odoo-architect info
+odoo-architect doctor
+odoo-architect validate
+```
+
+On Windows PowerShell, you can also run it from source without installing:
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m odoo_architect_cli info
+```
+
+See the full guide: [Install and Use](docs/install-and-use.md).
+
 ## Repository Structure
 
 ```text
@@ -56,24 +94,22 @@ See:
 
 ## Quick Start
 
-Run from source:
+After installing, create a new Odoo extension addon:
 
 ```bash
-python -m pip install -e .
-odoo-architect info
+odoo-architect scaffold biz_bridge_pharmacy --extension --depends stock,product_expiry,point_of_sale
 ```
 
-Or without installing:
+Review the reference addon:
 
 ```bash
-PYTHONPATH=src python -m odoo_architect_cli info
+odoo-architect review examples/custom_addons/biz_bridge_pro
 ```
 
-On Windows PowerShell:
+Run local checks:
 
-```powershell
-$env:PYTHONPATH = "src"
-python -m odoo_architect_cli info
+```bash
+odoo-architect validate
 ```
 
 ## CLI Commands
@@ -172,6 +208,7 @@ Shared rules live in the framework. Industry modules depend on the hub and add o
 ## Documentation
 
 - [Vision](docs/vision.md)
+- [Install and Use](docs/install-and-use.md)
 - [CLI Guide](docs/cli.md)
 - [Platform Support](docs/platform-support.md)
 - [Production Readiness](docs/production-readiness.md)
