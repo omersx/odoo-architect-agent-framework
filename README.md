@@ -1,5 +1,9 @@
 # Odoo Architect Agent Framework
 
+<p align="center">
+  <img src="assets/odoo-architect-logo.png" alt="Odoo Architect Agent Framework logo" width="420">
+</p>
+
 [![License: LGPL-3.0-or-later](https://img.shields.io/badge/License-LGPL--3.0--or--later-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](pyproject.toml)
 [![Odoo](https://img.shields.io/badge/Odoo-18%20%2F%2019-purple.svg)](docs/production-readiness.md)
@@ -7,6 +11,10 @@
 An open-source agent framework and CLI for building production-minded Odoo custom addons.
 
 The goal is simple: give AI coding agents a disciplined Odoo engineering layer so they behave less like generic chatbots and more like senior Odoo architects.
+
+<p align="center">
+  <img src="assets/odoo-architect-thumbnail.png" alt="Odoo Architect Agent Framework thumbnail showing intelligent ERP architecture" width="960">
+</p>
 
 ## What It Does
 
